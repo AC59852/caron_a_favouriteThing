@@ -1,13 +1,24 @@
 
-nav {
-    background-color: pink;
+nav, footer {
 
     ul {
         margin: 0;
         padding: 0;
-
-        li { display: inline; }
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 
-    a { text-decoration: none; }
+    a { text-decoration: none;
+        color: black;
+        font-family: $font-style;
+    }
+}
+
+nav {
+    margin-bottom: 100px;
+}
+
+footer {
+    margin-top: 150px;
 }

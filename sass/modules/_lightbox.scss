@@ -2,24 +2,14 @@
     display: none;
     //display: flex;
     flex-direction: row;
-    min-height: 100vh;
-    width: 100%;
-    position: fixed;
+    height: auto;
+    position: absolute;
     top: 0;
+    left: 0;
     z-index: 5000;
     padding: 20px;
-
-    background-color: rgba(0, 0,0, 0.85);
-
-    .sidebar {
-        flex: 1;
-    }
-    
-    .lb-content {
-        flex: 3;
-    }
-
-    img { max-width: 250px; }
+    padding-bottom: 370px;
+    background-color: rgba(0, 0, 0, 0.9);
 
     .close {    
         right: 24px;
@@ -31,6 +21,21 @@
         padding: 2px 14px 5px;
         border-radius: 50%;
         background-color: rgba(255,255,255,0.25);
+    }
+
+    .lb-image {
+        max-width: 70%;
+        width: 60%;
+        
+    }
+
+    .lb-image1, .lb-image3 {
+        margin-left: auto;
+    }
+
+    .lb-para {
+        display: flex;
+        flex-direction: column;
     }
 }
 

@@ -8,15 +8,15 @@ body {
     background-color: $body-bg;
 }
 
+
 h1, h2, h3 { color: $heading-color }
+
+h1, h2, h3, h4, p, a { font-family: $font-style; }
 
 .panel { min-height: 60vh; }
 
-.panel:nth-child(odd) {
-    background-color: salmon;
-    color: white;
-}
-
 #to-top { position: fixed; bottom: 10px; right: 10px; display: none; }
+
+.blurFilter { filter: blur(20px); }
 
 @import 'modules/_footer'
