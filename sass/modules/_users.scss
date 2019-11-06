@@ -1,15 +1,18 @@
 .team { 
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-evenly;
+    text-align: center;
 
     .user-panel {
-        flex: 0 1 200px;
-        text-align: center;
+        flex: 0 1 31%;
         padding: 8px;
 
-        .u-avatar { max-width: 200px; }
+        .u-avatar {
+            max-width: 50%;
+            top: 0;
+        }
 
         .u-link { 
             display: block; 
@@ -21,16 +24,6 @@
         }
 
         h1, h3 { margin: 5px 0; }
-    }
-}
-
-@media screen and (min-width: 900px) {
-    .team {
-        .user-panel { 
-            flex: 1 1;
-
-            .u-avatar { max-width: 300px; }
-        }
     }
 }
 

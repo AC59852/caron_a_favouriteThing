@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     // should really get the user data here and then fetch it thru, but let's try this asynchronously
     console.log('at the main route');
 
-    let query = "SELECT ID, avatar, Name, Logo, JobTitle FROM tbl_card";
+    let query = "SELECT ID, Name, Icon FROM tbl_product";
 
     sql.query(query, (err, result) => {
         if (err) { throw err; console.log(err); }
@@ -23,24 +23,12 @@ router.get('/:id', (req, res) => {
     console.log('hit a dynamic route!');
     console.log(req.params.id);
 
-    let query = `SELECT * FROM tbl_bio WHERE profID="${req.params.id}"`;
+    let query = `SELECT * FROM tbl_product_specific WHERE prodID="${req.params.id}"`;
 
     sql.query(query, (err, result) => {
         if (err) { throw err; console.log(err); }
 
         console.log(result); // should see objects wrapped in an array
-
-        // convert the social property into an array
-        // before we send it thru
-        // map is an array method that lets you map one value to another (convert it)
-        result[0].social = result[0].social.split(",").map(function(item) {
-            item = item.trim();
-            // item.trim() removes any empty white space from text
-
-            return item;
-        })
-
-        console.log("after trim / conversion:", result[0]);
 
         // render the home view with dynamic data
         res.json(result[0]);
