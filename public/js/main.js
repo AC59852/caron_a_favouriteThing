@@ -4,7 +4,8 @@ const myVM = (() => {
     // get the user buttons and fire off an async DB query with Fetch
     let userButtons = document.querySelectorAll('.u-link'),
         lightBox = document.querySelector('.lightbox'),
-        container = document.querySelector('.team');
+        container = document.querySelector('.team'),
+        heading = document.querySelector('.heading');
 
     function parseUserData(person) {
         let introPara1 = lightBox.querySelector('.lb-para1'),
@@ -13,16 +14,16 @@ const myVM = (() => {
 
         let bioContent1 = `
         <img class="lb-image lb-image1" src="${person.Content1}">
-            <p>${person.Para1}</p>
+            <p class="lb-text">${person.Para1}</p>
         `,
         bioContent2 = `
         <img class="lb-image lb-image2" src="${person.Content2}">
-            <p>${person.Para2}</p>
+            <p class="lb-text lb-text2">${person.Para2}</p>
         `,
 
         bioContent3 = `
         <img class="lb-image lb-image3" src="${person.Content3}">
-            <p>${person.Para3}</p>
+            <p class="lb-text lb-text3">${person.Para3}</p>
         `;
 
         introPara1.innerHTML = bioContent1;
@@ -30,7 +31,9 @@ const myVM = (() => {
         introPara3.innerHTML = bioContent3;
 
         lightBox.classList.add('show-lb');
-        container.classList.add('blurFilter');
+        container.classList.add('hidden');
+        heading.classList.add('hidden');
+        lightBox.classList.remove('animtionRemove');
 
     }
 
@@ -58,6 +61,8 @@ const myVM = (() => {
     // wire up the lightbox close button
     lightBox.querySelector('.close').addEventListener("click", function() {
         lightBox.classList.remove('show-lb');
-        container.classList.remove('blurFilter');
+        lightBox.classList.add('animtionRemove');
+        heading.classList.remove('hidden');
+        container.classList.remove('hidden');
     });
 })();
