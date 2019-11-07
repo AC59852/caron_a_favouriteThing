@@ -1,19 +1,19 @@
 {{!-- <section id="section2" class="panel">panel 2</section> --}}
 <section id="section3" class="panel">
+    <h1 class="heading">Austin's Favourite Things</h1>
     <div class="team">
         <!-- loop through all our team members and put their info on the page -->
         <!-- this is exactly like a forEach loop with plain JavaScript -->
 
         {{#each people}}
             <div class="user-panel">
-                <img class="u-avatar" src="images/{{ avatar }}" alt="avatar">
-
-                <a class="u-link" href="{{ ID }}">
-                    See More Info
-                </a>
+                <a class="u-link" href="{{ ID }}"><img class="u-avatar" src="images/{{ Icon }}" alt="avatar"></a>
 
                 <h1>{{ Name }}</h1>
-                <h3>{{ JobTitle }}</h3>
+
+                <h2>{{ Creator }}</h2>
+
+                <p>{{ QuickDesc }}</p>
             </div>
         {{/each}}
         
@@ -24,10 +24,11 @@
     <section class="lightbox">
         <span class="close">x</span>
         <section class="lb-content">
+            <h1>{{ Name }}</h1>
             <!-- render the database content here -->
-            <div class="lb-para1"></div>
-            <div class="lb-para2"></div>
-            <div class="lb-para3"></div>
+            <div class="lb-para lb-para1"></div>
+            <div class="lb-para lb-para2"></div>
+            <div class="lb-para lb-para3"></div>
         </div>
     </section>
 </section>
