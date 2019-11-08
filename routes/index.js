@@ -14,8 +14,8 @@ router.get('/', (req, res) => {
         res.render('home', { favThing: result }); 
     })
 })
-router.get('/:id', (req, res) => {
-    console.log('hit a dynamic route!');
+
+router.get('/thing/:id', (req, res) => {
     let query = `SELECT * FROM tbl_product_specific WHERE prodID="${req.params.id}"`;
 
     sql.query(query, (err, result) => {
